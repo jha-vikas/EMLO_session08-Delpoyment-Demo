@@ -1,0 +1,9 @@
+# Hydra
+hydra-core==1.3.2
+hydra-colorlog==1.2.0
+
+# Gradio
+gradio==3.38.0
+
+# omegaconf
+omegaconf==2.3.0
