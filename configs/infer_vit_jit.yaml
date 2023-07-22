@@ -24,6 +24,8 @@ task_name: "infer_jit_vit"
 # ckpt path
 ckpt_path: ${paths.root_dir}/ckpt/model.script.pt
 labels_path: ${paths.root_dir}/gold/gradio/cifar10_classes.txt
+test_path: ${paths.root_dir}/test/0000.jpg
+
 
 # compile model for faster training with pytorch 2.0
 compile: False
@@ -32,7 +34,8 @@ compile: False
 ckpt_fol: '${paths.root_dir}/ckpt_fol'
 
 # provide image path for inference 
-img_path: ${paths.data_dir}/PetImages_split/test/Dog/88.jpg
+#img_path: ${paths.data_dir}/PetImages_split/test/Dog/88.jpg
 
 # seed for random number generators in pytorch, numpy and python.random
 seed: null
+

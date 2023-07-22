@@ -44,12 +44,13 @@ def demo(cfg: DictConfig) -> Tuple[dict, dict]:
                         )
 
 
-    def recognize_img(image: PIL.Image):
+    def recognize_img(image: Image):
         if image is None:
             return None
         
         image = predict_transform(image)
-        image = torch.unsqueeze(image[0], 0)
+        image = torch.unsqueeze(image, 0)
+        #print(image.shape)
         #image = torch.tensor(image[None, None, ...], dtype=torch.float32)
         logits = model.forward(image)
         
