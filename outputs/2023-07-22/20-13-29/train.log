@@ -1,0 +1,11 @@
+[2023-07-22 20:13:29,476][gold.train][INFO] - Instantiating datamodule <gold.data_module.cifar10_datamodule.CIFAR10DataModule>
+[2023-07-22 20:13:29,480][gold.train][INFO] - Instantiating model <gold.models.vit_module_jit.VitLitModule>
+[2023-07-22 20:13:29,528][gold.train][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-07-22 20:13:29,748][gold.train][INFO] - Starting training!
+[2023-07-22 20:17:10,498][gold.train][INFO] - Scripting Model ...
+[2023-07-22 20:17:11,690][gold.train][INFO] - Saving traced model to /workspaces/session08-test/outputs/2023-07-22/20-13-29/model.script.pt
+[2023-07-22 20:17:11,690][gold.train][INFO] - Starting testing!
+[2023-07-22 20:17:11,691][gold.train][WARNING] - Best ckpt not found! Using current weights for testing...
+[2023-07-22 20:17:38,460][gold.train][INFO] - Best ckpt path: None
+[2023-07-22 20:17:38,469][gold.utils.utils][INFO] - Output dir: /workspaces/session08-test/outputs/2023-07-22/20-13-29
+[2023-07-22 20:17:38,502][gold.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...

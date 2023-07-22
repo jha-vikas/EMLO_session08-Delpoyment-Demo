@@ -1,0 +1,4 @@
+[console_scripts]
+gold_eval = gold.eval:main
+gold_infer = gold.infer:main
+gold_train = gold.train:main
