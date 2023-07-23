@@ -5,10 +5,10 @@
 
 defaults:
   - override /data: HP.yaml
-  - override /model: GPT.yaml
+  - override /model: GPT_jit.yaml
   - override /trainer: default.yaml
   - override /logger: null
-  - override /hparams_search: null
+#  - override /hparams_search: null
 
 
 # all parameters below will be merged with parameters from default configurations set above

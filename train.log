@@ -148,3 +148,513 @@ AttributeError: module 'gold.utils' has no attribute 'instantiate_loggers'
 [2023-07-23 13:20:48,554][gold.train][INFO] - Best ckpt path: None
 [2023-07-23 13:20:48,555][gold.utils.utils][INFO] - Output dir: /workspace/session08-test/logs/train/runs/2023-07-23_13-17-11
 [2023-07-23 13:20:48,556][gold.utils.utils][INFO] - Metric name is None! Skipping metric value retrieval...
+[2023-07-23 15:21:32,285][gold.train][INFO] - Instantiating datamodule <gold.data.HP_datamodule.HPDataModule>
+[2023-07-23 15:21:32,287][gold.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 644, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'gold' has no attribute 'data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 650, in _locate
+    obj = import_module(mod)
+  File "/opt/conda/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'gold.data'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 653, in _locate
+    raise ImportError(
+ImportError: Error loading 'gold.data.HP_datamodule.HPDataModule':
+ModuleNotFoundError("No module named 'gold.data'")
+Are you sure that 'data' is importable from module 'gold'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/session08-test/gold/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/session08-test/gold/train.py", line 27, in train
+    datamodule: L.LightningDataModule = hydra.utils.instantiate(cfg.data)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 333, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'gold.data.HP_datamodule.HPDataModule', set env var HYDRA_FULL_ERROR=1 to see chained exception.
+full_key: data
+[2023-07-23 15:21:32,290][gold.utils.utils][INFO] - Output dir: /home/session08-test/logs/train/runs/2023-07-23_15-21-32
+[2023-07-23 15:22:26,233][gold.train][INFO] - Instantiating datamodule <gold.data.HP_datamodule.HPDataModule>
+[2023-07-23 15:22:26,237][gold.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 644, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'gold.data' has no attribute 'HP_datamodule'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 650, in _locate
+    obj = import_module(mod)
+  File "/opt/conda/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/session08-test/gold/data/HP_datamodule.py", line 2, in <module>
+    import tiktoken
+ModuleNotFoundError: No module named 'tiktoken'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 653, in _locate
+    raise ImportError(
+ImportError: Error loading 'gold.data.HP_datamodule.HPDataModule':
+ModuleNotFoundError("No module named 'tiktoken'")
+Are you sure that 'HP_datamodule' is importable from module 'gold.data'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/session08-test/gold/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/session08-test/gold/train.py", line 27, in train
+    datamodule: L.LightningDataModule = hydra.utils.instantiate(cfg.data)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 333, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'gold.data.HP_datamodule.HPDataModule', set env var HYDRA_FULL_ERROR=1 to see chained exception.
+full_key: data
+[2023-07-23 15:22:26,240][gold.utils.utils][INFO] - Output dir: /home/session08-test/logs/train/runs/2023-07-23_15-22-26
+[2023-07-23 15:22:51,593][gold.train][INFO] - Instantiating datamodule <gold.data.HP_datamodule.HPDataModule>
+[2023-07-23 15:22:51,598][gold.train][INFO] - Instantiating model <gold.models.GPT_module.GPTLitModule>
+[2023-07-23 15:22:51,603][gold.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 644, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'gold.models' has no attribute 'GPT_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 650, in _locate
+    obj = import_module(mod)
+  File "/opt/conda/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/session08-test/gold/models/GPT_module.py", line 12, in <module>
+    from einops import rearrange, reduce, repeat, einsum
+ModuleNotFoundError: No module named 'einops'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 653, in _locate
+    raise ImportError(
+ImportError: Error loading 'gold.models.GPT_module.GPTLitModule':
+ModuleNotFoundError("No module named 'einops'")
+Are you sure that 'GPT_module' is importable from module 'gold.models'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/session08-test/gold/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/session08-test/gold/train.py", line 30, in train
+    model: L.LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 333, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'gold.models.GPT_module.GPTLitModule', set env var HYDRA_FULL_ERROR=1 to see chained exception.
+full_key: model
+[2023-07-23 15:22:51,606][gold.utils.utils][INFO] - Output dir: /home/session08-test/logs/train/runs/2023-07-23_15-22-51
+[2023-07-23 15:23:56,519][gold.train][INFO] - Instantiating datamodule <gold.data.HP_datamodule.HPDataModule>
+[2023-07-23 15:23:56,525][gold.train][INFO] - Instantiating model <gold.models.GPT_module_jit.GPTLitModule>
+[2023-07-23 15:23:56,531][gold.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 644, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'gold.models' has no attribute 'GPT_module_jit'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 650, in _locate
+    obj = import_module(mod)
+  File "/opt/conda/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/session08-test/gold/models/GPT_module_jit.py", line 14, in <module>
+    from einops.layers.torch import Rearrange, Reduce
+ModuleNotFoundError: No module named 'einops'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 653, in _locate
+    raise ImportError(
+ImportError: Error loading 'gold.models.GPT_module_jit.GPTLitModule':
+ModuleNotFoundError("No module named 'einops'")
+Are you sure that 'GPT_module_jit' is importable from module 'gold.models'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/session08-test/gold/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/session08-test/gold/train.py", line 30, in train
+    model: L.LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 333, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'gold.models.GPT_module_jit.GPTLitModule', set env var HYDRA_FULL_ERROR=1 to see chained exception.
+full_key: model
+[2023-07-23 15:23:56,534][gold.utils.utils][INFO] - Output dir: /home/session08-test/logs/train/runs/2023-07-23_15-23-56
+[2023-07-23 15:24:50,900][gold.train][INFO] - Instantiating datamodule <gold.data.HP_datamodule.HPDataModule>
+[2023-07-23 15:24:50,905][gold.train][INFO] - Instantiating model <gold.models.GPT_module_jit.GPTLitModule>
+[2023-07-23 15:24:50,911][gold.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 644, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'gold.models' has no attribute 'GPT_module_jit'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 650, in _locate
+    obj = import_module(mod)
+  File "/opt/conda/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/session08-test/gold/models/GPT_module_jit.py", line 15, in <module>
+    from torchsummary import summary
+ModuleNotFoundError: No module named 'torchsummary'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 653, in _locate
+    raise ImportError(
+ImportError: Error loading 'gold.models.GPT_module_jit.GPTLitModule':
+ModuleNotFoundError("No module named 'torchsummary'")
+Are you sure that 'GPT_module_jit' is importable from module 'gold.models'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/session08-test/gold/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/session08-test/gold/train.py", line 30, in train
+    model: L.LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 333, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'gold.models.GPT_module_jit.GPTLitModule', set env var HYDRA_FULL_ERROR=1 to see chained exception.
+full_key: model
+[2023-07-23 15:24:50,914][gold.utils.utils][INFO] - Output dir: /home/session08-test/logs/train/runs/2023-07-23_15-24-50
+[2023-07-23 15:25:19,697][gold.train][INFO] - Instantiating datamodule <gold.data.HP_datamodule.HPDataModule>
+[2023-07-23 15:25:19,703][gold.train][INFO] - Instantiating model <gold.models.GPT_module_jit.GPTLitModule>
+[2023-07-23 15:25:19,711][gold.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 644, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'gold.models' has no attribute 'gpt_jit_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 650, in _locate
+    obj = import_module(mod)
+  File "/opt/conda/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'gold.models.gpt_jit_module'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 653, in _locate
+    raise ImportError(
+ImportError: Error loading 'gold.models.gpt_jit_module.GPT':
+ModuleNotFoundError("No module named 'gold.models.gpt_jit_module'")
+Are you sure that 'gpt_jit_module' is importable from module 'gold.models'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/session08-test/gold/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/session08-test/gold/train.py", line 30, in train
+    model: L.LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 342, in instantiate_node
+    value = instantiate_node(
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 333, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'gold.models.gpt_jit_module.GPT', set env var HYDRA_FULL_ERROR=1 to see chained exception.
+full_key: model.model
+[2023-07-23 15:25:19,714][gold.utils.utils][INFO] - Output dir: /home/session08-test/logs/train/runs/2023-07-23_15-25-19
+[2023-07-23 15:27:32,480][gold.train][INFO] - Instantiating datamodule <gold.data.HP_datamodule.HPDataModule>
+[2023-07-23 15:27:32,487][gold.train][INFO] - Instantiating model <gold.models.GPT_jit.GPTLitModule>
+[2023-07-23 15:27:32,497][gold.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 644, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'gold.models' has no attribute 'gpt_jit_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 650, in _locate
+    obj = import_module(mod)
+  File "/opt/conda/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'gold.models.gpt_jit_module'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 653, in _locate
+    raise ImportError(
+ImportError: Error loading 'gold.models.gpt_jit_module.GPT':
+ModuleNotFoundError("No module named 'gold.models.gpt_jit_module'")
+Are you sure that 'gpt_jit_module' is importable from module 'gold.models'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/session08-test/gold/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/session08-test/gold/train.py", line 30, in train
+    model: L.LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 342, in instantiate_node
+    value = instantiate_node(
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 333, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'gold.models.gpt_jit_module.GPT', set env var HYDRA_FULL_ERROR=1 to see chained exception.
+full_key: model.model
+[2023-07-23 15:27:32,500][gold.utils.utils][INFO] - Output dir: /home/session08-test/logs/train/runs/2023-07-23_15-27-32
+[2023-07-23 15:30:06,058][gold.train][INFO] - Instantiating datamodule <gold.data.HP_datamodule.HPDataModule>
+[2023-07-23 15:30:06,063][gold.train][INFO] - Instantiating model <gold.models.GPT_jit.GPTLitModule>
+[2023-07-23 15:30:06,070][gold.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 644, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'gold.models' has no attribute 'gpt_jit_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 650, in _locate
+    obj = import_module(mod)
+  File "/opt/conda/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1004, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'gold.models.gpt_jit_module'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/utils.py", line 653, in _locate
+    raise ImportError(
+ImportError: Error loading 'gold.models.gpt_jit_module.GPT':
+ModuleNotFoundError("No module named 'gold.models.gpt_jit_module'")
+Are you sure that 'gpt_jit_module' is importable from module 'gold.models'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/session08-test/gold/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/session08-test/gold/train.py", line 30, in train
+    model: L.LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 226, in instantiate
+    return instantiate_node(
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 342, in instantiate_node
+    value = instantiate_node(
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 333, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/opt/conda/lib/python3.10/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'gold.models.gpt_jit_module.GPT', set env var HYDRA_FULL_ERROR=1 to see chained exception.
+full_key: model.model
+[2023-07-23 15:30:06,073][gold.utils.utils][INFO] - Output dir: /home/session08-test/logs/train/runs/2023-07-23_15-30-05
+[2023-07-23 15:31:35,251][gold.train][INFO] - Instantiating datamodule <gold.data.HP_datamodule.HPDataModule>
+[2023-07-23 15:31:35,257][gold.train][INFO] - Instantiating model <gold.models.GPT_jit.GPTLitModule>
+[2023-07-23 15:31:35,411][gold.train][INFO] - Instantiating loggers...
+[2023-07-23 15:31:35,411][gold.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-07-23 15:31:35,412][gold.train][INFO] - Instantiating callbacks...
+[2023-07-23 15:31:35,412][gold.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-07-23 15:31:35,418][gold.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-07-23 15:31:35,419][gold.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-07-23 15:31:35,420][gold.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-07-23 15:31:35,421][gold.train][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-07-23 15:31:35,587][gold.train][INFO] - Starting training!
+[2023-07-23 15:33:13,954][gold.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/session08-test/gold/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/session08-test/gold/train.py", line 67, in train
+    trainer.fit(model=model, datamodule=datamodule, ckpt_path=ckpt_path)
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 529, in fit
+    call._call_and_handle_interrupt(
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 568, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 973, in _run
+    results = self._run_stage()
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1016, in _run_stage
+    self.fit_loop.run()
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/loops/fit_loop.py", line 202, in run
+    self.on_advance_end()
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/loops/fit_loop.py", line 369, in on_advance_end
+    call._call_callback_hooks(trainer, "on_train_epoch_end", monitoring_callbacks=True)
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 193, in _call_callback_hooks
+    fn(trainer, trainer.lightning_module, *args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 180, in on_train_epoch_end
+    self._run_early_stopping_check(trainer)
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 191, in _run_early_stopping_check
+    if trainer.fast_dev_run or not self._validate_condition_metric(  # disable early_stopping with fast_dev_run
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/callbacks/early_stopping.py", line 146, in _validate_condition_metric
+    raise RuntimeError(error_msg)
+RuntimeError: Early stopping conditioned on metric `val/acc` which is not available. Pass in or modify your `EarlyStopping` callback to use any of the following: `val/loss`, `val/loss_best`, `train/loss`
+[2023-07-23 15:33:13,958][gold.utils.utils][INFO] - Output dir: /home/session08-test/logs/train/runs/2023-07-23_15-31-35
+[2023-07-23 15:36:07,078][gold.train][INFO] - Instantiating datamodule <gold.data.HP_datamodule.HPDataModule>
+[2023-07-23 15:36:07,083][gold.train][INFO] - Instantiating model <gold.models.GPT_jit.GPTLitModule>
+[2023-07-23 15:36:07,206][gold.train][INFO] - Instantiating loggers...
+[2023-07-23 15:36:07,207][gold.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-07-23 15:36:07,207][gold.train][INFO] - Instantiating callbacks...
+[2023-07-23 15:36:07,207][gold.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-07-23 15:36:07,212][gold.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-07-23 15:36:07,214][gold.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-07-23 15:36:07,215][gold.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-07-23 15:36:07,215][gold.train][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-07-23 15:36:07,380][gold.train][INFO] - Starting training!
+[2023-07-23 15:38:45,875][gold.train][INFO] - Scripting Model ...
+[2023-07-23 15:38:46,542][gold.train][INFO] - Saving traced model to ./model_ckpt/gpt_model_script.pt
+[2023-07-23 15:38:46,543][gold.train][INFO] - Starting testing!
+[2023-07-23 15:38:46,543][gold.train][WARNING] - Best ckpt not found! Using current weights for testing...
+[2023-07-23 15:38:46,545][gold.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/session08-test/gold/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/session08-test/gold/train.py", line 85, in train
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=ckpt_path)
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 735, in test
+    return call._call_and_handle_interrupt(
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 778, in _test_impl
+    results = self._run(model, ckpt_path=ckpt_path)
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 921, in _run
+    _verify_loop_configurations(self)
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/configuration_validator.py", line 42, in _verify_loop_configurations
+    __verify_eval_loop_configuration(model, "test")
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/configuration_validator.py", line 106, in __verify_eval_loop_configuration
+    raise MisconfigurationException(f"No `{step_name}()` method defined to run `Trainer.{trainer_method}`.")
+lightning.fabric.utilities.exceptions.MisconfigurationException: No `test_step()` method defined to run `Trainer.test`.
+[2023-07-23 15:38:46,547][gold.utils.utils][INFO] - Output dir: /home/session08-test/logs/train/runs/2023-07-23_15-36-06
+[2023-07-23 15:46:05,088][gold.train][INFO] - Instantiating datamodule <gold.data.HP_datamodule.HPDataModule>
+[2023-07-23 15:46:05,093][gold.train][INFO] - Instantiating model <gold.models.GPT_jit.GPTLitModule>
+[2023-07-23 15:46:05,244][gold.train][INFO] - Instantiating loggers...
+[2023-07-23 15:46:05,244][gold.utils.instantiators][WARNING] - No logger configs found! Skipping...
+[2023-07-23 15:46:05,244][gold.train][INFO] - Instantiating callbacks...
+[2023-07-23 15:46:05,245][gold.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.ModelCheckpoint>
+[2023-07-23 15:46:05,250][gold.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.EarlyStopping>
+[2023-07-23 15:46:05,252][gold.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichModelSummary>
+[2023-07-23 15:46:05,252][gold.utils.instantiators][INFO] - Instantiating callback <lightning.pytorch.callbacks.RichProgressBar>
+[2023-07-23 15:46:05,253][gold.train][INFO] - Instantiating trainer <lightning.pytorch.trainer.Trainer>
+[2023-07-23 15:46:05,416][gold.train][INFO] - Scripting Model ...
+[2023-07-23 15:46:06,286][gold.train][INFO] - Saving traced model to ./model_ckpt/gpt_model_script.pt
+[2023-07-23 15:46:06,287][gold.train][INFO] - Starting testing!
+[2023-07-23 15:46:06,293][gold.train][WARNING] - Best ckpt not found! Using current weights for testing...
+[2023-07-23 15:46:06,465][gold.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/session08-test/gold/utils/utils.py", line 65, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "/home/session08-test/gold/train.py", line 85, in train
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=ckpt_path)
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 735, in test
+    return call._call_and_handle_interrupt(
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 42, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 778, in _test_impl
+    results = self._run(model, ckpt_path=ckpt_path)
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 921, in _run
+    _verify_loop_configurations(self)
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/configuration_validator.py", line 42, in _verify_loop_configurations
+    __verify_eval_loop_configuration(model, "test")
+  File "/opt/conda/lib/python3.10/site-packages/lightning/pytorch/trainer/configuration_validator.py", line 106, in __verify_eval_loop_configuration
+    raise MisconfigurationException(f"No `{step_name}()` method defined to run `Trainer.{trainer_method}`.")
+lightning.fabric.utilities.exceptions.MisconfigurationException: No `test_step()` method defined to run `Trainer.test`.
+[2023-07-23 15:46:06,467][gold.utils.utils][INFO] - Output dir: /home/session08-test/logs/train/runs/2023-07-23_15-46-04
