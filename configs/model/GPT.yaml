@@ -1,0 +1,9 @@
+_target_: gold.models.GPT_module.GPTLitModule
+
+learning_rate: 1.0e-3
+n_embed: 16
+block_size: ${data.block_size}
+n_heads: 2
+drop_p: 0.0
+n_vocab: 100277
+n_decoder_blocks: 4

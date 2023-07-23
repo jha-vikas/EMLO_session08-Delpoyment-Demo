@@ -1,0 +1,7 @@
+_target_: gold.data.HP_datamodule.HPDataModule
+data_dir: ${paths.data_dir}
+train_ratio: 0.7
+batch_size: 64
+block_size: 4
+num_workers: 0
+pin_memory: False
