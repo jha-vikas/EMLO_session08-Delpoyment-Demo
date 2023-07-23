@@ -33,7 +33,7 @@ compile: False
 ckpt_fol: '${paths.root_dir}/ckpt_fol'
 
 # provide image path for inference 
-#img_path: ${paths.data_dir}/PetImages_split/test/Dog/88.jpg
+img_path: ${paths.data_dir}/PetImages_split/test/Dog/88.jpg
 
 # seed for random number generators in pytorch, numpy and python.random
 seed: null

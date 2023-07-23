@@ -12,7 +12,7 @@ defaults:
   #- experiment: null
 
 # task name, determines output directory path
-task_name: "infer_jit_vit"
+task_name: "infer_jit_gpt"
 
 # set False to skip model training
 #train: False
