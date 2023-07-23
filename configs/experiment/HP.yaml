@@ -16,6 +16,8 @@ defaults:
 
 experiment_name: "HP-GPT"
 
+model_ckpt_path: ${paths.root_dir}/model_ckpt/gpt_model_script.pt
+
 tags:
   HP: "optuna_optimize"
 
