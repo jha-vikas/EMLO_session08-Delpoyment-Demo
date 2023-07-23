@@ -12,7 +12,7 @@ defaults:
   #- experiment: null
 
 # task name, determines output directory path
-task_name: "infer_jit_gpt"
+task_name: "infer_gpt_jit"
 
 # set False to skip model training
 #train: False
@@ -30,7 +30,7 @@ ckpt_path: ${paths.root_dir}/model_ckpt/gpt_model_script.pt
 compile: False
 
 # simply provide checkpoint path to resume training
-ckpt_fol: '${paths.root_dir}/ckpt_fol'
+#ckpt_fol: '${paths.root_dir}/ckpt_fol'
 
 # provide image path for inference 
 #img_path: ${paths.data_dir}/PetImages_split/test/Dog/88.jpg

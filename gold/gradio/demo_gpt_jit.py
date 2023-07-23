@@ -11,12 +11,12 @@ log = utils.get_pylogger(__name__)
 
 def demo(cfg: DictConfig) -> Tuple[dict, dict]:
 
-    assert cfg.demo.ckpt_path
+    assert cfg.ckpt_path
 
     log.info("Running Demo")
 
-    log.info(f"Instantiating scripted model <{cfg.demo.ckpt_path}>")
-    model = torch.jit.load(cfg.demo.ckpt_path)
+    log.info(f"Instantiating scripted model <{cfg.ckpt_path}>")
+    model = torch.jit.load(cfg.ckpt_path)
 
     log.info(f"Loaded Model: {model}")
 
