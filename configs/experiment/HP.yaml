@@ -1,0 +1,42 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=HP
+
+defaults:
+  - override /data: HP.yaml
+  - override /model: GPT.yaml
+  - override /trainer: default.yaml
+  - override /logger: null
+  - override /hparams_search: null
+
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+experiment_name: "HP-GPT"
+
+tags:
+  HP: "optuna_optimize"
+
+seed: 12345
+
+trainer:
+  min_epochs: 0
+  max_epochs: 1
+  accelerator: auto
+  devices: 1
+ 
+
+data:
+  num_workers: 16
+  batch_size: 512
+
+tuner: True
+
+compile: False
+
+#logger:
+#  mlflow:
+#    tags: ${tags}
+#    experiment_name: ${experiment_name}

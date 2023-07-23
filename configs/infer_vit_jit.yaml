@@ -22,9 +22,8 @@ task_name: "infer_jit_vit"
 #test: True
 
 # ckpt path
-ckpt_path: ${paths.root_dir}/ckpt/model.script.pt
+ckpt_path: ${paths.root_dir}/model_ckpt/cifar_model_script.pt
 labels_path: ${paths.root_dir}/gold/gradio/cifar10_classes.txt
-test_path: ${paths.root_dir}/test/0000.jpg
 
 
 # compile model for faster training with pytorch 2.0
